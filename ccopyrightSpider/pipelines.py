@@ -19,7 +19,7 @@ class cCopyRightPipeline(object):
         self.conn = MySQLdb.connect(user=dbuser, passwd=dbpass, db=dbname, host = dbhost, charset="utf8", use_unicode=True)
         self.cursor = self.conn.cursor()
         #Clear Table
-        #self.cursor.execute("truncate table cCopyRight;")
+        self.cursor.execute("truncate table cCopyRight;")
         self.conn.commit();
 
     def process_item(self, item, spider):
